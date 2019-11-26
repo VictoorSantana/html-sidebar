@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="sidebar/sidebar.css">
+    <link rel="stylesheet" href="barcontrols/barcontrols.css">
+    <link rel="stylesheet" href="dashcard/dashcard.css">
+    <script type="text/javascript" src="sidebar/sidebar.js"></script>
+    <title>Titulo</title>
+  </head>
+  <body>
+    <div class="bg-primary p-1 d-flex position-fixed w-100 justify-content-between shadow" style="left:0;top:0;">
+      <button type="button" class="btn btn-primary text-white" onclick="sidebar(true)">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="dropdown dropleft">
+        <button class="btn btn-primary" type="button" id="dropdownControls" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-v"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownControls">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="barcontrols-container text-center p-1 bg-dark">
+        <button type="button" class="btn btn-dark">
+          <i class="fas fa-search"></i>
+        </button>
+        <hr>
+        <button type="button" class="btn btn-dark">
+          <i class="fas fa-save"></i>
+        </button>
+        <hr>
+        <button type="button" class="btn btn-dark">
+          <i class="fas fa-times"></i>
+        </button>
+        <hr>
+    </div>
+
+    <div class="sideb-container bg-dark p-2 pt-5 shadow-lg sideb-closed" id="sidebar">
+      <button type="button" class="sideb-close btn btn-dark text-secondary" onclick="sidebar(false)">
+        <i class="fas fa-times"></i>
+      </button>
+      <h6 class="sideb-toptitle text-secondary font-weight-bold text-uppercase">Settings</h6>
+
+      <hr class="m-0"></hr>
+
+      <div class="sideb-perfil px-3 py-2">
+        <div class="sideb-perfila d-inline-block">
+            <img src="sidebar/exemple.png" class="sideb-perfilimg" alt="">
+        </div>
+        <div class="sideb-perfilb ml-1 d-inline-block">
+          <h6 class="m-0 text-white">Jhon Smith</h6>
+          <p class="text-secondary">Developer</p>
+        </div>
+      </div>
+
+      <hr class="m-0"></hr>
+
+      <div class="sideb-form px-3 py-2">
+        <label class="sr-only" for="inlineFormInputGroup">Search</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-secondary border-secondary">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+          <input type="text" class="form-control bg-dark border-secondary" id="inlineFormInputGroup" placeholder="Search here">
+        </div>
+      </div>
+
+      <hr class="m-0"></hr>
+
+      <div class="sideb-general px-3 py-2">
+        <h6 class="text-secondary font-weight-bold text-uppercase">General</h6>
+      </div>
+      <div class="overflow-auto" style="height: calc(100vh - 243px);">
+        <div class="sideb-itemContainer px-3 overflow-hidden sideb-itemContainer-closed">
+          <div class="sideb-itemHead position-relative py-1 border-bottom border-secondary">
+              <h6 class="text-white font-weight-normal">Menu item</h6>
+              <i class="fas fa-angle-down sideb-icon text-white"></i>
+          </div>
+          <div class="sideb-itemBody text-left px-2">
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">First route</a>
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">Second route</a>
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">Third route</a>
+          </div>
+        </div>
+        <div class="sideb-itemContainer px-3 overflow-hidden sideb-itemContainer-closed">
+          <div class="sideb-itemHead position-relative py-1 border-bottom border-secondary">
+              <h6 class="sideb-title text-white font-weight-normal">Menu item</h6>
+              <i class="fas fa-angle-down sideb-icon text-white"></i>
+          </div>
+          <div class="sideb-itemBody text-left px-2">
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">First route</a>
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">Second route</a>
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">Third route</a>
+          </div>
+        </div>
+        <div class="sideb-itemContainer px-3 overflow-hidden sideb-itemContainer-closed">
+          <div class="sideb-itemHead position-relative py-1 border-bottom border-secondary">
+              <h6 class="sideb-title text-white font-weight-normal">Menu item</h6>
+              <i class="fas fa-angle-down sideb-icon text-white"></i>
+          </div>
+          <div class="sideb-itemBody text-left px-2">
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">First route</a>
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">Second route</a>
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">Third route</a>
+          </div>
+        </div>
+        <div class="sideb-itemContainer px-3 overflow-hidden sideb-itemContainer-closed">
+          <div class="sideb-itemHead position-relative py-1 border-bottom border-secondary">
+              <h6 class="sideb-title text-white font-weight-normal">Menu item</h6>
+              <i class="fas fa-angle-down sideb-icon text-white"></i>
+          </div>
+          <div class="sideb-itemBody text-left px-2">
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">First route</a>
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">Second route</a>
+              <a href="#" class="text-info d-block p-2 sideb-item rounded">Third route</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div style="width: calc(100% - 50px);margin: 46px 0 0 50px;" class="p-2">
+      <div class="row">
+
+        <div class="col">
+          <div class="dcard-container shadow border bg-danger">
+              <h1 class="dcard-icon d-inline-block text-white text-center p-2" style="width:60px;">
+                <i class="fas fa-star"></i>
+              </h1>
+              <div class="dcard-info d-inline-block border-left p-2">
+                <h4 class="dcard-infoTitle m-0 text-white font-weight-normal">Dash title</h4>
+                <h5 class="dcard-infoParag m-0 text-white">Dash parag</h5>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="dcard-container shadow border bg-warning">
+              <h1 class="dcard-icon d-inline-block text-white text-center p-2" style="width:60px;">
+                <i class="fas fa-star"></i>
+              </h1>
+              <div class="dcard-info d-inline-block border-left p-2">
+                <h4 class="dcard-infoTitle m-0 text-white font-weight-normal">Dash title</h4>
+                <h5 class="dcard-infoParag m-0 text-white">Dash parag</h5>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="dcard-container shadow border bg-primary">
+              <h1 class="dcard-icon d-inline-block text-white text-center p-2" style="width:60px;">
+                <i class="fas fa-star"></i>
+              </h1>
+              <div class="dcard-info d-inline-block border-left p-2">
+                <h4 class="dcard-infoTitle m-0 text-white font-weight-normal">Dash title</h4>
+                <h5 class="dcard-infoParag m-0 text-white">Dash parag</h5>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
